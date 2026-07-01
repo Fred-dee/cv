@@ -1,0 +1,54 @@
+\ProvidesPackage{styles/resume}[2026/07/01 Resume styling package]
+
+\RequirePackage[margin=0.6in]{geometry}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{array}
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{hyperref}
+\RequirePackage{titlesec}
+\RequirePackage{parskip}
+\RequirePackage{tabularx}
+
+\input{styles/colors}
+
+\color{ResumeText}
+\pagestyle{empty}
+\pagenumbering{gobble}
+
+\geometry{margin=0.6in}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\setlength{\emergencystretch}{3em}
+
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.2em,topsep=0.2em}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0.2em,topsep=0.2em}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=ResumeNavy,
+  linkcolor=ResumeNavy,
+  pdftitle={Resume},
+  pdfauthor={Resume}
+}
+
+\titleformat{\section}{\Large\bfseries\color{ResumeNavy}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{0.6em}{0.3em}
+
+\titleformat{\subsection}{\large\bfseries\color{ResumeSlate}}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{0.35em}{0.2em}
+
+\newcommand{\cvsection}[1]{\section*{#1}}
+\newcommand{\cvsubsection}[1]{\subsection*{#1}}
+\newcommand{\cvskill}[1]{\textcolor{ResumeNavy}{\textbf{#1}}}
+\newcommand{\cvskillgroup}[2]{\textbf{#1}: #2\\}
+\newcommand{\cvitem}[1]{\item #1}
+\newcommand{\cvcontact}[2]{\textbf{#1:} #2}
+\newenvironment{cvexperienceentry}[4]{%
+  \textbf{#1} \hfill \textcolor{ResumeSlate}{#4}\\
+  \textit{#2} \hfill \textit{#3}\\[0.1em]
+  \begin{itemize}[leftmargin=1.4em,itemsep=0.2em,topsep=0.2em]
+}{%
+  \end{itemize}\vspace{0.5em}
+}
