@@ -12,9 +12,9 @@ Professional resume built using LaTeX.
 ## Build
 
 ```bash
-latexmk -pdf main.tex
+latexmk -pdf -jobname="Monekli Fred Dilapisho CV" main.tex
 ```
 
 ## Output
 
-main.pdf
+Monekli Fred Dilapisho CV.pdf
