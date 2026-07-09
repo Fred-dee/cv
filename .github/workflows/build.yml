@@ -18,7 +18,11 @@ jobs:
         with:
           root_file: main.tex
           compiler: latexmk
-          args: -pdf -jobname=Monekli\ Fred\ Dilapisho\ CV
+          args: -pdf
+
+      - name: Rename built PDF
+        run: |
+          mv main.pdf "Monekli Fred Dilapisho CV.pdf"
 
       - name: Upload built PDF
         uses: actions/upload-artifact@v4
